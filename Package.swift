@@ -15,7 +15,6 @@ let package = Package(
     targets: [
         .target(
             name: "WYBOTLib",
-            path: "Sources",
             dependencies: [
                 .product(name: "MQTTNIO", package: "mqtt-nio"),
             ]
