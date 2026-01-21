@@ -13,6 +13,7 @@ let package = Package(
         .package(url: "https://github.com/swift-server-community/mqtt-nio", from: "2.12.1"),
     ],
     targets: [
+        .binaryTarget(name: "WYBOTLib", path: "./Sources/WYBOTLib.xcframework")
         .target(
             name: "WYBOTLib",
             dependencies: [
