@@ -14,12 +14,5 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(name: "WYBOTLib", path: "./Sources/WYBOTLib.xcframework")
-        .target(
-            name: "WYBOTLib",
-            dependencies: [
-                .product(name: "MQTTNIO", package: "mqtt-nio"),
-            ]
-        ),
-    ]
-    
+    ]  
 )
