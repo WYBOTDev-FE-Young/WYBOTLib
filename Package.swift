@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "WYBOTLib",
-	platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(name: "WYBOTLib", targets: ["WYBOTLib"]),
     ],
@@ -13,6 +13,16 @@ let package = Package(
         .package(url: "https://github.com/swift-server-community/mqtt-nio", from: "2.12.1"),
     ],
     targets: [
-        .binaryTarget(name: "WYBOTLib", path: "./Sources/WYBOTLib.xcframework")
+        .binaryTarget(
+            name: "WYBOTLibBinary",
+            path: "./Sources/WYBOTLib.xcframework"
+        ),
+        .target(
+            name: "WYBOTLib",
+            dependencies: [
+                "WYBOTLibBinary",
+                .product(name: "MQTTNIO", package: "mqtt-nio")
+            ]
+        )
     ]  
 )
